@@ -11,26 +11,26 @@
 
     h3 {
       text-align: center;
-      margin: 175px;
-      /*length: 400px;*/
       width: 150px;
-      position: relative;
-      animation: football 2s ease 0s infinite alternate;
-      text-shadow: 1px 1px 1px black;
-      transform: scale(1.5);
-      transform-origin:80%;
-      transition: width;
-      background: linear-gradient(to right, brown, brown, white, brown, brown);
+      position: relative; /* This line gives the football positioning relative to where it started, allowing the animation to work smoothly*/
+      animation: football 2s linear 0s infinite alternate; /* football is the name of the animation, 2s means two seconds; the duration of the animation, linear grants the animation a constant speed, infinite indicates that the animation will run forever, and alternate allows the football to move back and forth along the field */
+      text-shadow: 1px 1px 1px black; /* The pixel numbers indicate how much the text shadow will stand out against the text while black indicates the color of the text-shadow */
+      transform: scale(1.5); /* This line dilates the football by a factor of 1.5*/
+      transition: width; /*Triggers the transition made that changes the width of the football*/
+      background: linear-gradient(to right, brown, brown, white, brown, brown); /* This line is a bit confusing but ultimately grants the heading a background with a color akin to a football. Having multiple "browns" was done so that white would be the color in the center. To right ensured that the coloring would be from left to the right. */
     }
-
+ 
+/* This chunk of code will only be triggered when the user's mouse hovers over the football*/ 
     h3:hover {
-      width: 200px;
+      width: 200px; /* By hovering over the football, the user decreases its width by 200 pixels. */
     }
-
+/* This chunk of code dictates what type of animation the football will undergo. */
     @keyframes football {
-      0% {
+      /* These lines tell the animation that when it is starting, it must move the football 350 pixels to the right*/
+      0% { 
         right: 350px;
       }
+      /* These lines tell the animation that once it has moved 350px to the right, completing one instance of the animation, it must move 350 pixels left, bringing the animation back to its start.*/
       100% {
         left: 350px;
       }
